@@ -5,6 +5,12 @@ on:
     tags:
       - 'v*.*.*'  # Trigger on version tags like v1.0.0, v2.3.4
 
+permissions:
+  contents: write  # Required for creating releases and uploading assets
+  packages: write  # Required if you are using GitHub Packages
+  id-token: write  # Required if using OIDC tokens (if applicable)
+  actions: write  # Required for actions access
+
 jobs:
   build:
     runs-on: ubuntu-latest
